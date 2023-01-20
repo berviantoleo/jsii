@@ -1,4 +1,5 @@
 # Contributing to jsii
+
 Thanks for your interest in contributing to AWS JSII! :heart:
 
 This document describes how to set up a development environment and submit your
@@ -6,7 +7,9 @@ contributions. Please read it carefully and let us know if it's not up-to date
 (or even better, submit a pull request with your corrections! :wink:).
 
 ## Pre-requisites
+
 ### Setup Docker image
+
 Due to the polyglot nature of `jsii`, the toolchain requirements are somewhat
 more complicated than for most projects. In order to locally develop `jsii`, you
 will need a number of tools.
@@ -19,22 +22,23 @@ our own CI/CD: the ["superchain" image][superchain] from.
 The image can be built for local usage, too:
 
 ```console
-$ IMAGE=superchain
-$ docker build -t ${IMAGE} ./superchain
+IMAGE=superchain
+docker build -t ${IMAGE} ./superchain
 ```
 
 In order to get an interactive shell within a Docker container using the
 *superchain* image you just built:
 
 ```console
-$ cd jsii # go to the root of the jsii repo
-$ docker run --rm --net=host -it -v $PWD:$PWD -w $PWD ${IMAGE}
+cd jsii # go to the root of the jsii repo
+docker run --rm --net=host -it -v $PWD:$PWD -w $PWD ${IMAGE}
 ```
 
 In the shell that pops up, the `npm run` commands in the following sections must
 be executed.
 
 ### Alternative: Manually install the toolchain
+
 The following tools need to be installed to develop on JSII locally. We recommend
 using the docker image from the above section, but if you wish to, you can install
 in your development environment.
@@ -42,14 +46,14 @@ in your development environment.
 - [Node `14.6.0`] or later
 - [Yarn `1.19.1`] or later
 - An OpenJDK-8 distribution (e.g: [Oracle's OpenJDK8], [Amazon Corretto 8])
-  + [`maven >= 3.0.5`](https://maven.apache.org)
+  - [`maven >= 3.0.5`](https://maven.apache.org)
 - [.NET Core `3.1`] or later
-  + *Recommended:* [`mono >= 5`](https://www.mono-project.com)
+  - *Recommended:* [`mono >= 5`](https://www.mono-project.com)
 - [Python `3.7.3`] or later
-  + [`pip`](https://pip.pypa.io/en/stable/installing/)
-  + [`setuptools >= 38.6.0`](https://pypi.org/project/setuptools/)
-  + [`wheel`](https://pypi.org/project/wheel/)
-  + *Recommended:* [`twine`](https://pypi.org/project/twine/)
+  - [`pip`](https://pip.pypa.io/en/stable/installing/)
+  - [`setuptools >= 38.6.0`](https://pypi.org/project/setuptools/)
+  - [`wheel`](https://pypi.org/project/wheel/)
+  - *Recommended:* [`twine`](https://pypi.org/project/twine/)
 - [Go] `1.18` or newer
 
 [Node `14.6.0`]: https://nodejs.org/download/release/v14.6.0/
@@ -61,6 +65,7 @@ in your development environment.
 [Go]: https://go.dev/dl/
 
 ## Getting Started
+
 ### Bootstrapping
 
 The project is managed as a [monorepo] using [lerna].
@@ -68,7 +73,7 @@ The project is managed as a [monorepo] using [lerna].
 [monorepo]: https://github.com/babel/babel/blob/main/doc/design/monorepo.md
 [lerna]: https://github.com/lerna/lerna
 
-1. Check out this respository and change directory to its root.
+1. Check out this repository and change directory to its root.
 2. Run `yarn install && yarn build` to install lerna, bootstrap the repository
    and perform an initial build and test cycle.
 
@@ -140,10 +145,10 @@ The runtime client library should be implemented as a module under
 
 The jsii runtime client library usually includes the following components:
 
-- Child process manager: responsible to start/stop the **@jsii/runtime** child
+- Child process manager: responsible to start/stop the __@jsii/runtime__ child
   process.
 - Protocol layer: implements the STDIN/STDOUT protocol that interacts with the
-  **@jsii/runtime**.
+  __@jsii/runtime__.
 - Proxy layer: includes base classes and serialization utilities to implement
   the generated proxy classes.
 
@@ -163,6 +168,7 @@ The [Python](./packages/jsii-pacmak/lib/targets/python.ts) target is a good
 example to work from.
 
 ## Releasing
+
 ### The `jsii/superchain` Docker image
 
 Upon merging new changes to the `main` branch, the `jsii/superchain:nightly`
