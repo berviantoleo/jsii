@@ -3055,6 +3055,7 @@ exports[`Generated code for "jsii-calc": <outDir>/ 1`] = `
        ┃           ┣━ 📄 ILevelOneProps.cs
        ┃           ┣━ 📄 ILoadBalancedFargateServiceProps.cs
        ┃           ┣━ 📄 Implementation.cs
+       ┃           ┣━ 📄 ImplementationFromAsyncContext.cs
        ┃           ┣━ 📄 ImplementInternalInterface.cs
        ┃           ┣━ 📄 ImplementsInterfaceWithInternal.cs
        ┃           ┣━ 📄 ImplementsInterfaceWithInternalSubclass.cs
@@ -3083,6 +3084,7 @@ exports[`Generated code for "jsii-calc": <outDir>/ 1`] = `
        ┃           ┣━ 📄 IParamShadowsBuiltinsProps.cs
        ┃           ┣━ 📄 IParentStruct982.cs
        ┃           ┣━ 📄 IPrivatelyImplemented.cs
+       ┃           ┣━ 📄 IPromiseProducer.cs
        ┃           ┣━ 📄 IPublicInterface.cs
        ┃           ┣━ 📄 IPublicInterface2.cs
        ┃           ┣━ 📄 IRandomNumberGenerator.cs
@@ -11554,6 +11556,45 @@ namespace Amazon.JSII.Tests.CalculatorNamespace
 
 `;
 
+exports[`Generated code for "jsii-calc": <outDir>/dotnet/Amazon.JSII.Tests.CalculatorPackageId/Amazon/JSII/Tests/CalculatorNamespace/IPromiseProducer.cs 1`] = `
+using Amazon.JSII.Runtime.Deputy;
+
+#pragma warning disable CS0672,CS0809,CS1591
+
+namespace Amazon.JSII.Tests.CalculatorNamespace
+{
+    /// <summary>Async Context operations Validates features work when run from within an async context.</summary>
+    /// <remarks>
+    /// <strong>See</strong>: https://github.com/aws/jsii/issues/3917
+    /// </remarks>
+    [JsiiInterface(nativeType: typeof(IPromiseProducer), fullyQualifiedName: "jsii-calc.IPromiseProducer")]
+    public interface IPromiseProducer
+    {
+        [JsiiMethod(name: "produce", returnsJson: "{\\"type\\":{\\"primitive\\":\\"string\\"}}")]
+        string Produce();
+
+        /// <summary>Async Context operations Validates features work when run from within an async context.</summary>
+        /// <remarks>
+        /// <strong>See</strong>: https://github.com/aws/jsii/issues/3917
+        /// </remarks>
+        [JsiiTypeProxy(nativeType: typeof(IPromiseProducer), fullyQualifiedName: "jsii-calc.IPromiseProducer")]
+        internal sealed class _Proxy : DeputyBase, Amazon.JSII.Tests.CalculatorNamespace.IPromiseProducer
+        {
+            private _Proxy(ByRefValue reference): base(reference)
+            {
+            }
+
+            [JsiiMethod(name: "produce", returnsJson: "{\\"type\\":{\\"primitive\\":\\"string\\"}}")]
+            public string Produce()
+            {
+                return InvokeInstanceMethod<string>(new System.Type[]{}, new object[]{})!;
+            }
+        }
+    }
+}
+
+`;
+
 exports[`Generated code for "jsii-calc": <outDir>/dotnet/Amazon.JSII.Tests.CalculatorPackageId/Amazon/JSII/Tests/CalculatorNamespace/IPublicInterface.cs 1`] = `
 using Amazon.JSII.Runtime.Deputy;
 
@@ -12692,6 +12733,50 @@ namespace Amazon.JSII.Tests.CalculatorNamespace
         public virtual double Value
         {
             get => GetInstanceProperty<double>()!;
+        }
+    }
+}
+
+`;
+
+exports[`Generated code for "jsii-calc": <outDir>/dotnet/Amazon.JSII.Tests.CalculatorPackageId/Amazon/JSII/Tests/CalculatorNamespace/ImplementationFromAsyncContext.cs 1`] = `
+using Amazon.JSII.Runtime.Deputy;
+
+#pragma warning disable CS0672,CS0809,CS1591
+
+namespace Amazon.JSII.Tests.CalculatorNamespace
+{
+    [JsiiClass(nativeType: typeof(Amazon.JSII.Tests.CalculatorNamespace.ImplementationFromAsyncContext), fullyQualifiedName: "jsii-calc.ImplementationFromAsyncContext", parametersJson: "[{\\"name\\":\\"producer\\",\\"type\\":{\\"fqn\\":\\"jsii-calc.IPromiseProducer\\"}}]")]
+    public class ImplementationFromAsyncContext : DeputyBase
+    {
+        public ImplementationFromAsyncContext(Amazon.JSII.Tests.CalculatorNamespace.IPromiseProducer producer): base(_MakeDeputyProps(producer))
+        {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(Amazon.JSII.Tests.CalculatorNamespace.IPromiseProducer producer)
+        {
+            return new DeputyProps(new object?[]{producer});
+        }
+
+        /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>
+        /// <param name="reference">The Javascript-owned object reference</param>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        protected ImplementationFromAsyncContext(ByRefValue reference): base(reference)
+        {
+        }
+
+        /// <summary>Used by jsii to construct an instance of this class from DeputyProps</summary>
+        /// <param name="props">The deputy props</param>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        protected ImplementationFromAsyncContext(DeputyProps props): base(props)
+        {
+        }
+
+        [JsiiMethod(name: "doAsyncWork", returnsJson: "{\\"type\\":{\\"primitive\\":\\"string\\"}}", isAsync: true)]
+        public virtual string DoAsyncWork()
+        {
+            return InvokeInstanceMethod<string>(new System.Type[]{}, new object[]{})!;
         }
     }
 }

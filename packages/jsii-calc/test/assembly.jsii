@@ -7937,25 +7937,9 @@
           },
           "locationInModule": {
             "filename": "lib/compliance.ts",
-            "line": 3153
-          },
-          "name": "later",
-          "returns": {
-            "type": {
-              "primitive": "string"
-            }
-          }
-        },
-        {
-          "abstract": true,
-          "docs": {
-            "stability": "stable"
-          },
-          "locationInModule": {
-            "filename": "lib/compliance.ts",
             "line": 3152
           },
-          "name": "now",
+          "name": "produce",
           "returns": {
             "type": {
               "primitive": "string"
@@ -8338,7 +8322,7 @@
         },
         "locationInModule": {
           "filename": "lib/compliance.ts",
-          "line": 3157
+          "line": 3156
         },
         "parameters": [
           {
@@ -8352,7 +8336,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "lib/compliance.ts",
-        "line": 3156
+        "line": 3155
       },
       "methods": [
         {
@@ -8362,24 +8346,9 @@
           },
           "locationInModule": {
             "filename": "lib/compliance.ts",
-            "line": 3164
+            "line": 3158
           },
-          "name": "doAsyncStuff",
-          "returns": {
-            "type": {
-              "primitive": "string"
-            }
-          }
-        },
-        {
-          "docs": {
-            "stability": "stable"
-          },
-          "locationInModule": {
-            "filename": "lib/compliance.ts",
-            "line": 3159
-          },
-          "name": "doNormalStuff",
+          "name": "doAsyncWork",
           "returns": {
             "type": {
               "primitive": "string"
@@ -18958,5 +18927,5 @@
     }
   },
   "version": "3.20.120",
-  "fingerprint": "58WxrqNJMJE1Z4D13CRDxszUEaNF5LoQvvnv4eQBygg="
+  "fingerprint": "upzlEkc4X3Q+ylgpfLMlZpbuaOg6aAWbxxIgE5zV+SA="
 }
